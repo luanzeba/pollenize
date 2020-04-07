@@ -1,0 +1,17 @@
+{
+  "name": "react_rails_template",
+  "license": "MIT",
+  "engines": {
+    "node": "12.16.1",
+    "yarn": "1.22.4"
+  },
+  "scripts": {
+    "build": "yarn --cwd client install && yarn --cwd client build",
+    "coverage": "yarn --cwd client coverage",
+    "deploy": "cp -a client/build/. public/",
+    "eslint": "client/node_modules/.bin/eslint",
+    "heroku-postbuild": "yarn build && yarn deploy",
+    "start": "bin/rake start",
+    "test": "yarn --cwd client test"
+  }
+}
