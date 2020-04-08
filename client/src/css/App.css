@@ -1,0 +1,210 @@
+:root {
+  /* generic */
+  --gutterSm: 0.4rem;
+  --gutterMd: 0.8rem;
+  --gutterLg: 1.6rem;
+  --gutterXl: 2.4rem;
+  --gutterXx: 7.2rem;
+  --colorPrimary: #B0BEC5;
+  --fontFamily: "Helvetica", sans-serif;
+  --fontSizeSm: 1.2rem;
+  --fontSizeMd: 1.6rem;
+  --fontSizeLg: 2.1rem;
+  --fontSizeXl: 2.8rem;
+  --fontSizeXx: 3.6rem;
+  --lineHeightSm: 1.35;
+  --lineHeightMd: 1.8;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  color: #455A64;
+  font-family: var(--fontFamily);
+  font-size: var(--fontSizeMd);
+  line-height: var(--lineHeightMd);
+}
+
+.home-page-background {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+video#background-video {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  width: auto;
+  min-width: 100%;
+  height: auto;
+  min-height: 100%;
+  z-index: -100;    
+  background-size: cover;
+}
+
+header.top {
+  position: fixed;
+  top: 2rem;
+  left: 2rem;
+  width: auto;
+  height: auto;
+  background-size: cover;
+  text-align: left;
+}
+
+header.top h1 {
+  font-size: 14.4rem;
+  line-height: 0.7;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.search-form {
+  flex: 0 0 auto;
+  min-width: 50vw;
+  position: relative;
+}
+
+.search-input {
+  margin: 0;
+  padding: var(--gutterMd) var(--gutterLg);
+  color: inherit;
+  width: 85%;
+  font-family: inherit;
+  font-size: var(--fontSizeLg);
+  font-weight: inherit;
+  line-height: var(--lineHeightMd);
+  border: none;
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+.search-input::placeholder {
+  color: var(--colorPrimary);
+}
+
+.search-input:focus {
+  outline: none;
+}
+
+.search-button {
+  position: absolute;
+  background: white;
+  width: 15%;
+  padding: var(--gutterLg) var(--gutterLg);
+  line-height: var(--lineHeightSm);
+  font-size: var(--fontSizeMd);
+  border: none;
+  border-radius: 0 0.4rem 0.4rem 0;
+  color: var(--colorPrimary);
+  cursor: pointer;
+}
+
+.search-term {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.mentor-search-results {
+  display: grid;
+  width: 100vw;
+  grid-template-columns: repeat(5, 1fr);
+}
+
+.mentor-result-container {
+  grid-column: 2 / 5;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mentor-result-container:hover {
+  -webkit-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+  transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.mentor-profile-container {
+  grid-column: 2 / 5;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 40px;
+  margin-bottom: 20px;
+  border-radius: 5px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.mentor-result-details {
+  grid-column: 3 / 4;
+  flex-flow: column wrap;
+  margin: 0 0 0 10rem;
+}
+
+.avatar-picture {
+  grid-column: 2 / 3;
+  border-radius: 50%;
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+}
+
+.video-player {
+  grid-column: 2 / 5;
+  margin: auto;
+  border-radius: 5px;
+}
+
+.get-contact {
+  font-family: var(--fontFamily);
+  font-size: var(--fontSizeMd);
+  grid-column: 3/3;
+  margin: 20px auto;
+  color: #52D48E;
+  padding: 20px 40px;
+  border: 1px solid #52D48E;
+  border-radius: 6px;
+}
+
+.get-contact:hover {
+  color: #fff;
+  background: #52D48E;
+  transition: all 0.5s ease 0.05s;
+  }
