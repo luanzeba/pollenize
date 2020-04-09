@@ -1,38 +1,26 @@
-import React, { Component } from 'react';
-import Header from './Header';
-import BackgroundVideo from './BackgroundVideo';
-import PublicHomePage from './PublicHomePage';
-import '../css/App.css';
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from 'react'
+import Header from './Header'
+import BackgroundVideo from './BackgroundVideo'
+import PublicHomePage from './PublicHomePage'
+import '../css/App.css'
+import { library } from '@fortawesome/fontawesome-svg-core'
+import { faSearch } from '@fortawesome/free-solid-svg-icons'
 library.add(faSearch)
 
-class App extends Component {
-  constructor (props) {
-    super(props);
+const App = ({ history, location }) => {
+  const [searchTerm, setSearchTerm] = useState('')
 
-    this.state = {
-      searchTerm: ''
-    }
-  }
+  return (
+    <div className="home-page-background" >
+      <BackgroundVideo />
+      <Header />
+      <PublicHomePage
+        search={setSearchTerm}
+        history={history}
+        location={location}
+      />
+    </div>
+  )
+}
 
-  search = searchTerm => {
-    this.setState({ searchTerm });
-  };
-
-  render () {  
-    return (
-      <div className="home-page-background" >
-        <BackgroundVideo />
-        <Header />
-        <PublicHomePage 
-          search={ this.search }
-          history={ this.props.history }
-          location={ this.props.location }
-        />
-      </div>
-    )
-  }
-};
-
-export default App;
+export default App

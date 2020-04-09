@@ -1,70 +1,70 @@
-import React from 'react';
-import sampleMentors from '../sampleMentors';
-import Header from './Header';
-import ProfilePicture from "./ProfilePicture";
-import MentorDetails from "./MentorDetails";
-import '../css/App.css';
+import React from 'react'
+import sampleMentors from '../sampleMentors'
+import Header from './Header'
+import ProfilePicture from "./ProfilePicture"
+import MentorDetails from "./MentorDetails"
+import '../css/App.css'
 
 class SearchResults extends React.Component {
   constructor(props) {
-    super(props);
-    this.state = { mentors: {} };
+    super(props)
+    this.state = { mentors: {} }
   }
 
   findMatch = (searchRegex, target) => {
     switch (target && target.constructor) {
       case String:
-        return searchRegex.test(target);
+        return searchRegex.test(target)
 
       case Array:
-        return target.some(value => this.findMatch(searchRegex, value)); // calls findMatch again because the array might contain strings or an Object
+        return target.some(value => this.findMatch(searchRegex, value)) // calls findMatch again because the array might contain strings or an Object
 
       case Object:
-        return Object.values(target).some(value => searchRegex.test(value));
+        return Object.values(target).some(value => searchRegex.test(value))
 
       default:
-        console.log(`Now that's a prahblem:`);
-        console.log(target);
-    };
-  };
+        console.log(`Now that's a prahblem:`)
+        console.log(target)
+    }
+  }
 
   matchSearchTerm = (mentor) => {
-    const searchTerm = this.searchTerm();
-    const searchRegex = new RegExp(searchTerm, 'i');
-    const { schooling, work, name } = mentor;
-    return [schooling, work, name].some(mentorAttribute => this.findMatch(searchRegex, mentorAttribute));
-  };
+    const searchTerm = this.searchTerm()
+    const searchRegex = new RegExp(searchTerm, 'i')
+    const { schooling, work, name } = mentor
+    return [schooling, work, name].some(mentorAttribute => this.findMatch(searchRegex, mentorAttribute))
+  }
 
   filterObject = (obj, predicate) => {
-    let result = {}, key;
+    let result = {}, key
 
     for (key in obj) {
       if (obj.hasOwnProperty(key) && predicate(obj[key])) {
-        result[key] = obj[key];
+        result[key] = obj[key]
       }
     }
 
-    return result;
-  };
+    return result
+  }
 
   searchTerm = () => {
-    const queryString = this.props.location.search;
+    const queryString = this.props.location.search
 
     if (queryString) {
-      const searchTermWithQueryString = queryString.split('filter=')[1];
-      return searchTermWithQueryString.split('&')[0];
+      const searchTermWithQueryString = queryString.split('filter=')[1]
+      return searchTermWithQueryString.split('&')[0]
     } else {
-      return "";
+      return ""
     }
-  };
+  }
 
   componentDidMount() {
-    const filteredMentors = this.filterObject(sampleMentors, this.matchSearchTerm);
-    this.setState({ mentors: filteredMentors });
+    const filteredMentors = this.filterObject(sampleMentors, this.matchSearchTerm)
+    this.setState({ mentors: filteredMentors })
   }
 
   handleClick = (mentorId) => {
-    this.props.history.push(`/mentor/${mentorId}`);
+    this.props.history.push(`/mentor/${mentorId}`)
   }
 
   render() {
@@ -87,8 +87,8 @@ class SearchResults extends React.Component {
           ))}
         </div>
       </React.Fragment>
-    );
+    )
   }
 }
 
-export default SearchResults;
+export default SearchResults
