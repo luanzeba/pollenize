@@ -1,6 +1,7 @@
 // This is just some sample data so you don't have to think of your own!
-const mentors = {
-  mentor1: {
+const mentors = [
+  {
+    id: "mentor1",
     name: "Joana Hoffman",
     image: "./joana-hoffman.jpg",
     schooling: [{
@@ -12,8 +13,8 @@ const mentors = {
       focus: "Web Develoment",
     },
   },
-
-  mentor2: {
+  {
+    id: "mentor2",
     name: "Jon Doe",
     image: "./jon-doe.jpg",
     schooling: [{
@@ -25,8 +26,8 @@ const mentors = {
       focus: "Games and Graphics",
     },
   },
-
-  mentor3: {
+  {
+    id: "mentor3",
     name: "Andrew Smith",
     image: "./andrew-smith.jpg",
     schooling: [{
@@ -38,8 +39,8 @@ const mentors = {
       focus: "Home Automation",
     },
   },
-
-  mentor4: {
+  {
+    id: "mentor4",
     name: "Lorena Homes",
     image: "./lorena-homes.jpg",
     schooling: [{
@@ -51,8 +52,8 @@ const mentors = {
       focus: "Technology",
     },
   },
-
-  mentor5: {
+  {
+    id: "mentor5",
     name: "Luan Vieira",
     image: "",
     schooling: [{
@@ -67,8 +68,8 @@ const mentors = {
       focus: "Web Development",
     },
   },
-
-  mentor6: {
+  {
+    id: "mentor6",
     name: "Jessica Vieira",
     image: "",
     schooling: [{
@@ -86,8 +87,8 @@ const mentors = {
       focus: "Technology Agriculture",
     },
   },
-
-  mentor7: {
+  {
+    id: "mentor7",
     name: "Matthew Gaudioso",
     image: "",
     schooling: [{
@@ -102,6 +103,6 @@ const mentors = {
       focus: "Technology Agriculture",
     },
   },
-};
+];
 
 export default mentors;

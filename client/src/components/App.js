@@ -8,7 +8,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons'
 library.add(faSearch)
 
 const App = ({ history, location }) => {
-  const [searchTerm, setSearchTerm] = useState('')
+  const [_, setSearchTerm] = useState('')
 
   return (
     <div className="home-page-background" >
