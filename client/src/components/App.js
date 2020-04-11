@@ -1,26 +1,17 @@
-import React, { useState } from 'react'
-import Header from './Header'
-import BackgroundVideo from './BackgroundVideo'
-import PublicHomePage from './PublicHomePage'
-import '../css/App.css'
-import { library } from '@fortawesome/fontawesome-svg-core'
-import { faSearch } from '@fortawesome/free-solid-svg-icons'
-library.add(faSearch)
+import React from 'react'
+import { Route, Switch } from 'react-router-dom'
+import HomePage from './HomePage'
+import NotFound from './NotFound'
+import SearchResults from './SearchResults'
+import MentorProfile from './MentorProfile'
 
-const App = ({ history, location }) => {
-  const [_, setSearchTerm] = useState('')
-
-  return (
-    <div className="home-page-background" >
-      <BackgroundVideo />
-      <Header />
-      <PublicHomePage
-        search={setSearchTerm}
-        history={history}
-        location={location}
-      />
-    </div>
-  )
-}
+const App = () => (
+  <Switch>
+    <Route exact path="/" component={HomePage} />
+    <Route exact path="/search" component={SearchResults} />
+    <Route exact path="/mentor/:id" component={MentorProfile} />
+    <Route component={NotFound} />
+  </Switch>
+)
 
 export default App

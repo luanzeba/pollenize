@@ -2,13 +2,12 @@ import React, { useRef } from 'react'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import '../css/App.css'
 
-const PublicHomePage = ({ history, search }) => {
+const SearchBar = ({ history }) => {
   const searchInput = useRef(null)
 
   const handleSubmit = event => {
     event.preventDefault()
     const searchTerm = searchInput.current.value
-    search(searchTerm)
     history.push(`/search?filter=${searchTerm}`)
   }
 
@@ -25,4 +24,4 @@ const PublicHomePage = ({ history, search }) => {
   )
 }
 
-export default PublicHomePage
+export default SearchBar
