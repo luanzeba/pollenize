@@ -1,6 +1,6 @@
 import React from "react"
 
-const MentorDetails = ({ mentor }) => {
+const MentorDetails = ({ mentor: { name, schooling, work: { title, focus } } }) => {
   const nameWithLastInitial = mentorName => {
     const nameArray = mentorName.split(" ")
     if (nameArray.length > 1) {
@@ -13,9 +13,11 @@ const MentorDetails = ({ mentor }) => {
 
   return (
     <div className="mentor-result-details" >
-      <p><b>{nameWithLastInitial(mentor.name)}</b></p>
-      <p>{`${mentor.schooling[0].level} in ${mentor.schooling[0].field}`}</p>
-      <p>{`Works as ${mentor.work.title} with a focus in ${mentor.work.focus}`}</p>
+      <p><b>{nameWithLastInitial(name)}</b></p>
+      {schooling.map(({ level, field }, index) => (
+        <p key={index}>{level} in {field}</p>
+      ))}
+      <p>{`Works as ${title} with a focus in ${focus}`}</p>
     </div>
   )
 }
