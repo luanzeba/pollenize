@@ -1,5 +1,6 @@
 // For a detailed explanation regarding each configuration property, visit:
 // https://jestjs.io/docs/en/configuration.html
+// const coverageThreshold = require("./client/build/coverageThreshold");
 
 module.exports = {
   // Automatically clear mock calls and instances between every test
@@ -16,11 +17,15 @@ module.exports = {
 
   // The paths to modules that run some code to configure or set up the testing environment before each test
   setupFiles: [
-    '<rootDir>/test/setupTests.js',
+    '<rootDir>/test/support/setupTests.js',
   ],
 
-  // The test environment that will be used for testing
-  // testEnvironment: 'jsdom',
+  // A map from regular expressions to module names that allow to stub out resources with a single module
+  moduleNameMapper: {
+    // Map asset imports to an empty module for tests.
+    "\\.(jpg|ico|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga|ogv)$": "<rootDir>/test/support/emptyModule.js",
+    "\\.(css|scss|sass)$": "identity-obj-proxy"
+  },
 
   // The glob patterns Jest uses to detect test files
   testMatch: ['**/__tests__/**/*.js?(x)', '**/?(*.)+(spec|test).js?(x)'],
@@ -29,13 +34,13 @@ module.exports = {
   testPathIgnorePatterns: ['\\\\node_modules\\\\'],
 
   // This option sets the URL for the jsdom environment. It is reflected in properties such as location.href
-  testURL: 'http://localhost',
+  // testURL: 'http://localhost',
 
   // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
   transformIgnorePatterns: ['<rootDir>/node_modules/'],
 
   // Indicates whether each individual test should be reported during the run
-  verbose: false,
+  // verbose: false,
 
   setupFilesAfterEnv: [
     "jest-enzyme"
@@ -45,12 +50,12 @@ module.exports = {
     enzymeAdapter: "react16"
   },
   transform: {
-    "^.+\\.(js|jsx)$": "babel-jest",
+    "^.+\\.(js|jsx)$": "babel-jest"
   },
-  // collectCoverageFrom: [
-  //   "src/**/*.js",
-  //   "!src/index.js"
-  // ],
+  collectCoverageFrom: [
+    "src/**/*.js",
+    "!src/index.js"
+  ],
   coverageReporters: [
     "html",
     "text"
