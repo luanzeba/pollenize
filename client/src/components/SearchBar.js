@@ -1,26 +1,33 @@
-import React, { useRef } from 'react'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { useState } from 'react'
+import { Button, Form, Input, InputGroup, InputGroupAddon } from "reactstrap"
+import { Search } from 'react-bootstrap-icons'
 import '../css/App.css'
 
 const SearchBar = ({ history }) => {
-  const searchInput = useRef(null)
+  const [input, setInput] = useState('')
 
   const handleSubmit = event => {
     event.preventDefault()
-    const searchTerm = searchInput.current.value
-    history.push(`/search?filter=${searchTerm}`)
+    history.push(`/search?filter=${input}`)
   }
 
   return (
-    <form className="search-form" onSubmit={handleSubmit}>
-      <input
-        type="text"
-        className="search-input"
-        ref={searchInput}
-        required placeholder="What career are you interested in..."
-      />
-      <button type='submit' className="search-button"><FontAwesomeIcon icon="search" /></button>
-    </form>
+    <Form className="search-form" onSubmit={handleSubmit}>
+      <InputGroup>
+        <Input
+          type="text"
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          placeholder="What career are you interested in..."
+          className="search-input"
+        />
+        <InputGroupAddon addonType="append">
+          <Button type='submit' color="primary" className="search-button">
+            <Search transform="scale(-1, 1)" />
+          </Button>
+        </InputGroupAddon>
+      </InputGroup>
+    </Form>
   )
 }
 

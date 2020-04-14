@@ -52,7 +52,7 @@ video#background-video {
   min-width: 100%;
   height: auto;
   min-height: 100%;
-  z-index: -100;    
+  z-index: -100;
   background-size: cover;
 }
 
@@ -75,6 +75,26 @@ header.top h1 {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  width: 100%;
+}
+
+.input-group-append {
+  display: flex;
+  margin-left: -1px;
+}
+
+.input-group-append.btn {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  position: relative;
+  z-index: 2;
 }
 
 .search-form {
