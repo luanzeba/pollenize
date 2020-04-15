@@ -1,4 +1,4 @@
-import App from '../src/components/App';
+import App from '../src/components/App'
 
 describe("App", () => {
   let wrapper;
@@ -10,8 +10,3 @@ describe("App", () => {
     expect(wrapper.find(App)).toExist()
   })
 })
-// test('renders learn react link', () => {
-//   const { getByText } = render(<App />);
-//   const linkElement = getByText(/learn react/i);
-//   expect(linkElement).toBeInTheDocument();
-// });
