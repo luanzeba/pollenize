@@ -1,10 +1,10 @@
 import React from 'react'
-import mentors from '../sampleMentors'
 import Header from './Header'
 import ProfilePicture from "./ProfilePicture"
 import MentorDetails from "./MentorDetails"
+import mentors from '../sampleMentors'
 import filterMentors from "../helpers/filterMentors"
-import '../css/App.css'
+import '../css/search_results.scss'
 
 const SearchResults = ({ history, location }) => {
   const searchParams = new URLSearchParams(location.search)

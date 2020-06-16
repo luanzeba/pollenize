@@ -1,0 +1,19 @@
+@import './globals.scss';
+
+#search-input {
+  font-size: $fontSizeMd;
+  padding: $gutterXl $gutterMd $gutterXl $gutterMd;
+  border-radius: 0.4rem 0 0 0.4rem;
+}
+
+#search-button {
+  padding: 0 $gutterXx 0 $gutterXx;
+  border-radius: 0 0.4rem 0.4rem 0;
+  font-size: $fontSizeSm;
+}
+
+.search-form {
+  flex: 0 0 auto;
+  min-width: 50vw;
+  position: relative;
+}

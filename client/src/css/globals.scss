@@ -1,0 +1,20 @@
+$gutterSm: 0.4rem;
+$gutterMd: 0.8rem;
+$gutterLg: 1.6rem;
+$gutterXl: 2.4rem;
+$gutterXx: 7.2rem;
+
+$primary: #52D48E;
+$colorSecondary: #B0BEC5;
+
+$fontSizeSm: 1.2rem;
+$fontSizeMd: 1.6rem;
+$fontSizeLg: 2.1rem;
+$fontSizeXl: 2.8rem;
+$fontSizeXx: 3.6rem;
+
+$lineHeightSm: 1.35;
+$lineHeightMd: 1.8;
+
+// Import Bootstrap and its default variables
+@import '~bootstrap/scss/bootstrap.scss';

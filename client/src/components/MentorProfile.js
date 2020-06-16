@@ -4,6 +4,7 @@ import ProfilePicture from "./ProfilePicture"
 import MentorDetails from "./MentorDetails"
 import mentors from "../sampleMentors"
 import Header from "./Header"
+import '../css/mentor_profile.scss'
 
 const MentorProfile = ({ match: { params } }) => {
   const mentor = mentors.filter(mentor => mentor.id === params.id)[0]

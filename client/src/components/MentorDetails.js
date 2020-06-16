@@ -1,4 +1,5 @@
 import React from "react"
+import '../css/mentor_details.scss'
 
 const MentorDetails = ({ mentor: { name, schooling, work: { title, focus } } }) => {
   const nameWithLastInitial = mentorName => {

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Button, Form, Input, InputGroup, InputGroupAddon } from "reactstrap"
 import { Search } from 'react-bootstrap-icons'
-import '../css/App.css'
+import '../css/search_bar.scss'
 
 const SearchBar = ({ history }) => {
   const [input, setInput] = useState('')
@@ -15,14 +15,14 @@ const SearchBar = ({ history }) => {
     <Form className="search-form" onSubmit={handleSubmit}>
       <InputGroup>
         <Input
+          id="search-input"
           type="text"
           value={input}
           onChange={e => setInput(e.target.value)}
           placeholder="What career are you interested in..."
-          className="search-input"
         />
         <InputGroupAddon addonType="append">
-          <Button type='submit' color="primary" className="search-button">
+          <Button type='submit' color="primary" id="search-button">
             <Search transform="scale(-1, 1)" />
           </Button>
         </InputGroupAddon>
