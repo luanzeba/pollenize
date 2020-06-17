@@ -1,0 +1,7 @@
+@import './globals.scss';
+
+.mentor-result-details {
+  grid-column: 3 / 4;
+  flex-flow: column wrap;
+  margin: 0 0 0 10rem;
+}

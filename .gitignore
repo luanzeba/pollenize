@@ -1,5 +1,6 @@
 # Ignore bundler config.
 /.bundle
+node_modules
 client/node_modules
 
 # Ignore all logfiles and tempfiles.
@@ -8,6 +9,7 @@ client/node_modules
 !/log/.keep
 !/tmp/.keep
 .history/*
+.vscode/
 
 # Ignore uploaded files in development.
 /storage/*

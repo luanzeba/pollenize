@@ -1,13 +1,10 @@
-import React from "react";
-const pathToImages = require.context('../images/', true);
+import React from "react"
+import requireContext from 'require-context.macro'
+import '../css/profile_picture.scss'
+const pathToImages = requireContext('../images/', true)
 
-class ProfilePicture extends React.Component {
+const ProfilePicture = ({ mentor: { image } }) => (
+  <img className="avatar-picture" alt="Avatar" src={pathToImages(image, true)} ></img>
+)
 
-  render() {
-    return (
-      <img className="avatar-picture" alt="Avatar" src={pathToImages(this.props.mentor.image, true)} ></img>
-    )
-  }
-};
-
-export default ProfilePicture;
+export default ProfilePicture
