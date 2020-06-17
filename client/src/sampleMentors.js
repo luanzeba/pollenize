@@ -55,7 +55,7 @@ const mentors = [
   {
     id: "mentor5",
     name: "Luan Vieira",
-    image: "",
+    image: "./luan-v.jpeg",
     schooling: [{
       field: "International Relations",
       level: "Bachelor",
@@ -71,7 +71,7 @@ const mentors = [
   {
     id: "mentor6",
     name: "Jessica Vieira",
-    image: "",
+    image: "./jessica-v.jpeg",
     schooling: [{
       field: "Environmental Engineering",
       level: "Bachelor and Masters",
@@ -90,7 +90,7 @@ const mentors = [
   {
     id: "mentor7",
     name: "Matthew Gaudioso",
-    image: "",
+    image: "./matthew-g.jpeg",
     schooling: [{
       field: "Mechanical Engineering",
       level: "Bachelor",
