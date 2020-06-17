@@ -11,6 +11,7 @@
     "deploy": "cp -a client/build/. public/",
     "eslint": "client/node_modules/.bin/eslint",
     "heroku-postbuild": "yarn build && yarn deploy",
+    "install": "yarn --cwd client install",
     "start": "bin/rake start",
     "test": "yarn --cwd client test"
   }
