@@ -24,7 +24,7 @@ describe('SearchBar', () => {
       type: "text",
       value: "",
       placeholder: "What career are you interested in...",
-      className: "search-input form-control"
+      id: "search-input"
     })
 
     expect(wrapper.find(Search)).toHaveProp("transform", "scale(-1, 1)")
