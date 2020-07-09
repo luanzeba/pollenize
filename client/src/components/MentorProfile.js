@@ -1,4 +1,5 @@
 import React from "react"
+import Calendar from 'react-calendar'
 import ReactPlayer from 'react-player'
 
 import ProfilePicture from "./ProfilePicture"
@@ -18,8 +19,14 @@ const MentorProfile = ({ match: { params } }) => {
           <ProfilePicture mentor={mentor} />
           <MentorDetails mentor={mentor} />
         </div>
+        <h3 className="mentor-profile-title mb-5"><strong>Learn more about {mentor.name}</strong></h3>
         <ReactPlayer className="video-player" url='https://www.youtube.com/watch?v=ysz5S6PUM-U' />
-        <button className="get-contact" >Get Contact</button>
+        <h3 className="mentor-profile-title mb-5 mt-5"><strong>Schedule a mentoring session with {mentor.name}</strong></h3>
+        <Calendar
+          className={"mentor-calendar mt-5"}
+          value={new Date()}
+          onChange={(input) => { console.log(input) }}
+        />
       </div>
     </React.Fragment>
   )
