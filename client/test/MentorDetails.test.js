@@ -1,28 +1,15 @@
 import MentorDetails from "../src/components/MentorDetails"
-
-const mentor = {
-  name: "John Doe",
-  schooling: [{
-    level: "Bachelors",
-    field: "Engineering"
-  }, {
-    level: "Masters",
-    field: "Engineering"
-  }],
-  work: {
-    title: "Manager",
-    focus: "Web design"
-  }
-}
+import { mentor } from "./helpers/sampleMentor"
 
 describe("MentorDetails", () => {
   let wrapper
+
   beforeEach(() => {
     wrapper = shallow(<MentorDetails mentor={mentor} />)
   })
 
   it("renders the mentor name with last name initial", () => {
-    expect(wrapper).toIncludeText("John D.")
+    expect(wrapper).toIncludeText("Jon D.")
   })
 
   it("renders all schooling", () => {

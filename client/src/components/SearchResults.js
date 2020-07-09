@@ -18,7 +18,7 @@ const SearchResults = ({ history, location }) => {
   return (
     <React.Fragment>
       <Header />
-      <h1 className="search-term" >Results for "{searchTerm}" </h1>
+      <h1 className="search-term" >Results for "{searchTerm}"</h1>
       <div className="mentor-search-results" >
         {filteredMentors.map(mentor => (
           <div className="mentor-result-container" key={mentor.id} onClick={() => handleClick(mentor.id)} >
