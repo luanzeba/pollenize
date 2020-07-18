@@ -27,8 +27,11 @@ describe("MentorProfile", () => {
   })
 
   it('renders a mentor details', () => {
-    expect(wrapper.find(ProfilePicture)).toHaveProp('mentor', expect.any(Object))
     expect(wrapper.find(MentorDetails)).toHaveProp('mentor', expect.any(Object))
     expect(wrapper.find(ReactPlayer)).toHaveProp('className', 'video-player')
+
+    const h1Titles = wrapper.find(".mentor-profile-section")
+    expect(h1Titles.at(0)).toHaveText("📹 Learn more about Joana")
+    expect(h1Titles.at(1)).toHaveText("🗓 Schedule a mentoring session with Joana")
   })
 })

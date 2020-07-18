@@ -1,6 +1,7 @@
 export const mentor = {
   id: "mentor1",
-  name: "Jon Doe",
+  firstName: "Jon",
+  lastName: "D.",
   image: "./jon-doe.jpg",
   schooling: [{
     level: "Bachelors",

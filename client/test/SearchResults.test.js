@@ -23,13 +23,21 @@ describe("SearchResults", () => {
     )
   })
 
-  it('displays a header ', () => {
-    expect(wrapper.find(Header)).toExist();
-    expect(wrapper.find(".search-term")).toHaveText('Results for "software"')
+  it('displays a header', () => {
+    expect(wrapper.find(Header)).toHaveProp("searchTerm", "software");
   })
 
   it('renders a list of mentors', () => {
-    expect(wrapper).toContainMatchingElements(3, ProfilePicture)
-    expect(wrapper).toContainMatchingElements(3, MentorDetails)
+    expect(wrapper).toContainMatchingElements(4, MentorDetails)
+  })
+
+  describe("onClick", () => {
+    beforeEach(() => {
+      wrapper.find(".mentor-result-container").first().simulate("click")
+    })
+
+    it('updates the history object', () => {
+      expect(locationObj.pathname).toEqual("/mentor/mentor1")
+    })
   })
 })

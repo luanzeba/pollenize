@@ -3,7 +3,8 @@
 // Example -- This JSON:
 // {
 //   id: "mentor1",
-//   name: "Jon Doe",
+//   firstName: "Jon",
+//   lastName: "D.",
 //   image: "./jon-doe.jpg",
 //   schooling: [{
 //     field: "Computer Engineering",
@@ -16,7 +17,7 @@
 // }
 //
 // Becomes this:
-// ["mentor1", "Jon Doe", "./jon-doe.jpg", "Computer Engineering", "Bachelor", "Software Engineer", "Games and Graphics"]
+// ["mentor1", "Jon", "D.", "./jon-doe.jpg", "Computer Engineering", "Bachelor", "Software Engineer", "Games and Graphics"]
 
 const allStrings = array => (
   array.length > 0 && array.every(value => typeof value === "string")

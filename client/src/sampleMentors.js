@@ -2,7 +2,8 @@
 const mentors = [
   {
     id: "mentor1",
-    name: "Joana Hoffman",
+    firstName: "Joana",
+    lastName: "H.",
     image: "./joana-hoffman.jpg",
     schooling: [{
       field: "Computer Science",
@@ -15,7 +16,8 @@ const mentors = [
   },
   {
     id: "mentor2",
-    name: "Jon Doe",
+    firstName: "Jon",
+    lastName: "D.",
     image: "./jon-doe.jpg",
     schooling: [{
       field: "Computer Engineering",
@@ -28,7 +30,8 @@ const mentors = [
   },
   {
     id: "mentor3",
-    name: "Andrew Smith",
+    firstName: "Andrew",
+    lastName: "S.",
     image: "./andrew-smith.jpg",
     schooling: [{
       field: "Mechanical Engineering",
@@ -41,7 +44,8 @@ const mentors = [
   },
   {
     id: "mentor4",
-    name: "Lorena Homes",
+    firstName: "Lorena",
+    lastName: "H.",
     image: "./lorena-homes.jpg",
     schooling: [{
       field: "Communications",
@@ -54,7 +58,8 @@ const mentors = [
   },
   {
     id: "mentor5",
-    name: "Luan Vieira",
+    firstName: "Luan",
+    lastName: "V.",
     image: "./luan-v.jpeg",
     schooling: [{
       field: "International Relations",
@@ -64,13 +69,14 @@ const mentors = [
       level: "Masters",
     }],
     work: {
-      title: "Support Engineer",
+      title: "Software Engineer",
       focus: "Web Development",
     },
   },
   {
     id: "mentor6",
-    name: "Jessica Vieira",
+    firstName: "Jessica",
+    lastName: "V.",
     image: "./jessica-v.jpeg",
     schooling: [{
       field: "Environmental Engineering",
@@ -89,7 +95,8 @@ const mentors = [
   },
   {
     id: "mentor7",
-    name: "Matthew Gaudioso",
+    firstName: "Matthew",
+    lastName: "G.",
     image: "./matthew-g.jpeg",
     schooling: [{
       field: "Mechanical Engineering",

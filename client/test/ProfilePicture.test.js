@@ -5,7 +5,7 @@ describe("ProfilePicture", () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallow(<ProfilePicture mentor={mentor} />)
+    wrapper = shallow(<ProfilePicture imagePath={mentor.image} />)
   })
 
   it("renders the profile picture", () => {

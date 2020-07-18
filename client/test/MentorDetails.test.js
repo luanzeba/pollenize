@@ -1,4 +1,5 @@
 import MentorDetails from "../src/components/MentorDetails"
+import ProfilePicture from "../src/components/ProfilePicture"
 import { mentor } from "./helpers/sampleMentor"
 
 describe("MentorDetails", () => {
@@ -6,6 +7,10 @@ describe("MentorDetails", () => {
 
   beforeEach(() => {
     wrapper = shallow(<MentorDetails mentor={mentor} />)
+  })
+
+  it("renders a ProfilePicture", () => {
+    expect(wrapper.find(ProfilePicture)).toHaveProp("imagePath", "./jon-doe.jpg")
   })
 
   it("renders the mentor name with last name initial", () => {
