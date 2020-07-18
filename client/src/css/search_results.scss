@@ -1,12 +1,5 @@
 @import './globals.scss';
 
-.search-term {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-}
-
 .mentor-search-results {
   display: grid;
   width: 100vw;
@@ -18,6 +11,7 @@
   align-items: center;
   justify-content: flex-start;
   padding: 40px;
+  margin-top: 20px;
   margin-bottom: 20px;
   border-radius: 5px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
@@ -27,8 +21,6 @@
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
 }
 
 .mentor-result-container:hover {

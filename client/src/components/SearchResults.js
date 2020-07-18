@@ -1,6 +1,6 @@
 import React from 'react'
+
 import Header from './Header'
-import ProfilePicture from "./ProfilePicture"
 import MentorDetails from "./MentorDetails"
 import mentors from '../sampleMentors'
 import filterMentors from "../helpers/filterMentors"
@@ -11,21 +11,16 @@ const SearchResults = ({ history, location }) => {
   const searchTerm = searchParams.get('filter') || ""
   const filteredMentors = filterMentors(mentors, searchTerm)
 
-  const handleClick = mentorId => {
+  const onClick = mentorId => {
     history.push(`/mentor/${mentorId}`)
   }
 
   return (
-    <React.Fragment>
-      <Header />
-      <h1 className="search-term" >Results for "{searchTerm}" </h1>
+    <>
+      <Header searchTerm={searchTerm} />
       <div className="mentor-search-results" >
         {filteredMentors.map(mentor => (
-          <div className="mentor-result-container" key={mentor.id} onClick={() => handleClick(mentor.id)} >
-            <ProfilePicture
-              key={`${mentor.id}-picture`}
-              mentor={mentor}
-            />
+          <div className="mentor-result-container" key={mentor.id} onClick={() => onClick(mentor.id)} >
             <MentorDetails
               key={`${mentor.id}-details`}
               mentor={mentor}
@@ -33,7 +28,7 @@ const SearchResults = ({ history, location }) => {
           </div>
         ))}
       </div>
-    </React.Fragment>
+    </>
   )
 }
 
