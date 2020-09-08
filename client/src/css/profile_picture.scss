@@ -1,9 +1,29 @@
 @import './globals.scss';
 
 .avatar-picture {
-  grid-column: 2 / 3;
   border-radius: 50%;
-  width: 150px;
-  height: 150px;
+  justify-self: center;
+  grid-column: 1 / -1 ;
+  margin-bottom: 1rem;
+  width: 100px;
+  height: 100px;
   object-fit: cover;
+}
+
+@media (min-width: 700px) {
+  .avatar-picture {
+    border-radius: 50%;
+    justify-self: center;
+    grid-column: 1;
+    grid-row: 1 / -1;
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+}
+
+@media (min-width: 700px) and (max-width: 900px) {
+  .avatar-picture {
+    margin-right: 2rem;
+  }
 }

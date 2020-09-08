@@ -18,16 +18,18 @@ const SearchResults = ({ history, location }) => {
   return (
     <>
       <Header searchTerm={searchTerm} />
-      <div className="mentor-search-results" >
-        {filteredMentors.map(mentor => (
-          <div className="mentor-result-container" key={mentor.id} onClick={() => onClick(mentor.id)} >
-            <MentorDetails
-              key={`${mentor.id}-details`}
-              mentor={mentor}
-            />
-          </div>
-        ))}
-      </div>
+      <main>
+        <div className="mentor-search-results" >
+          {filteredMentors.map(mentor => (
+            <div className="mentor-result-container" key={mentor.id} onClick={() => onClick(mentor.id)} >
+              <MentorDetails
+                key={`${mentor.id}-details`}
+                mentor={mentor}
+              />
+            </div>
+          ))}
+        </div>
+      </main>
     </>
   )
 }
