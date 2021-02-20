@@ -9,9 +9,15 @@ const MentorDetails = ({ mentor: { firstName, lastName, image, schooling, work: 
     <div className="mentor-result-details" >
       <p><b>{`${firstName} ${lastName}`}</b></p>
       {schooling.map(({ level, field }, index) => (
-        <p key={index}>{level} in {field}</p>
+        <section>
+          <span role="img" aria-label="graduation cap">🎓 </span>
+          <p className="d-inline" key={index}>{level} in {field}</p>
+        </section>
       ))}
-      <p>{`Works as ${title} with a focus in ${focus}`}</p>
+      <section className="mt-3">
+        <span role="img" aria-label="wrench">🔧 </span>
+        <p className="d-inline">{`Works as ${title} with a focus in ${focus}`}</p>
+      </section>
     </div>
   </>
 )

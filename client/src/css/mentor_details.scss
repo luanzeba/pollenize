@@ -1,5 +1,13 @@
 @import './globals.scss';
 
 .mentor-result-details {
-  margin: 0 0 0 10rem;
+  grid-column: 1 / -1;
+  line-height: 1.5;
+}
+
+@media (min-width: 700px) {
+  .mentor-result-details {
+    grid-column: 2 / -1;
+    grid-row: 1 / -1;
+  }
 }
